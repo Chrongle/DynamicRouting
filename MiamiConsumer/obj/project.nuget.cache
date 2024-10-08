@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Q+k/Y/qUvTUBhq3aaBNQMxEi5BKarmEKiCzIUcipW5sBMfZPt6k/9YE9Xfig2fFwC2FBkQW4A6UA5MG3Q4J1vA==",
+  "success": true,
+  "projectFilePath": "C:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\MiamiConsumer\\MiamiConsumer.csproj",
+  "expectedPackageFiles": [
+    "c:\\udv\\nuget_packages\\rabbitmq.client\\6.2.2\\rabbitmq.client.6.2.2.nupkg.sha512",
+    "c:\\udv\\nuget_packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "c:\\udv\\nuget_packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

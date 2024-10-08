@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "XLk+WZ0m5fLVb4CtnMshhHFyghr0cc0320dYu2orVhgBJwZ5eXn0VQY68xcPqxIkrsA//mXdVDCydrlUzOw0ew==",
+  "success": true,
+  "projectFilePath": "C:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\MoscowConsumer\\MoscowConsumer.csproj",
+  "expectedPackageFiles": [
+    "c:\\udv\\nuget_packages\\rabbitmq.client\\6.2.2\\rabbitmq.client.6.2.2.nupkg.sha512",
+    "c:\\udv\\nuget_packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "c:\\udv\\nuget_packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

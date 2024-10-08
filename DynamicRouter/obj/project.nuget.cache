@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ouqsfnyNkLJN6xwvwiAUIBKTrSTrJsZVdYBSzTMjVCOKOEV+L7VpnLV/yr7ZeitWSpzwc/fvWypmppKwpvPLLw==",
+  "success": true,
+  "projectFilePath": "C:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\DynamicRouter\\DynamicRouter.csproj",
+  "expectedPackageFiles": [
+    "c:\\udv\\nuget_packages\\rabbitmq.client\\6.2.2\\rabbitmq.client.6.2.2.nupkg.sha512",
+    "c:\\udv\\nuget_packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "c:\\udv\\nuget_packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
