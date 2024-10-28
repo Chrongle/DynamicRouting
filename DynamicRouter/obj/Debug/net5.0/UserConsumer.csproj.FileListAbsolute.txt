@@ -1,5 +1,0 @@
-C:\UCL\PBA\2. Semester\Systemintegration\DynamicRouting\DynamicRouter\obj\Debug\net5.0\UserConsumer.csproj.AssemblyReference.cache
-C:\UCL\PBA\2. Semester\Systemintegration\DynamicRouting\DynamicRouter\obj\Debug\net5.0\UserConsumer.GeneratedMSBuildEditorConfig.editorconfig
-C:\UCL\PBA\2. Semester\Systemintegration\DynamicRouting\DynamicRouter\obj\Debug\net5.0\UserConsumer.AssemblyInfoInputs.cache
-C:\UCL\PBA\2. Semester\Systemintegration\DynamicRouting\DynamicRouter\obj\Debug\net5.0\UserConsumer.AssemblyInfo.cs
-C:\UCL\PBA\2. Semester\Systemintegration\DynamicRouting\DynamicRouter\obj\Debug\net5.0\UserConsumer.csproj.CoreCompileInputs.cache
