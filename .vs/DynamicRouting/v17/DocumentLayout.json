@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\",
+  "WorkspaceRootPath": "D:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C348BDBC-AE99-4E24-9D89-6509AEEA5F86}|Solution Items{C348BDBC-AE99-4E24-9D89-6509AEEA5F86}|C:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\MoscowConsumer\\MoscowConsumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{C348BDBC-AE99-4E24-9D89-6509AEEA5F86}|Solution Items{C348BDBC-AE99-4E24-9D89-6509AEEA5F86}|solutionrelative:MoscowConsumer\\MoscowConsumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{6D6CDBB5-D8F8-4A97-BAD1-AF1D52AD125F}|MoscowConsumer\\MoscowConsumer.csproj|d:\\ucl\\pba\\2. semester\\systemintegration\\dynamicrouting\\moscowconsumer\\moscowconsumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6D6CDBB5-D8F8-4A97-BAD1-AF1D52AD125F}|MoscowConsumer\\MoscowConsumer.csproj|solutionrelative:moscowconsumer\\moscowconsumer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,9 +20,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MoscowConsumer.csproj",
-              "DocumentMoniker": "C:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\MoscowConsumer\\MoscowConsumer.csproj",
+              "DocumentMoniker": "D:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\MoscowConsumer\\MoscowConsumer.csproj",
               "RelativeDocumentMoniker": "MoscowConsumer\\MoscowConsumer.csproj",
-              "ToolTip": "C:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\MoscowConsumer\\MoscowConsumer.csproj",
+              "ToolTip": "D:\\UCL\\PBA\\2. Semester\\Systemintegration\\DynamicRouting\\MoscowConsumer\\MoscowConsumer.csproj",
               "RelativeToolTip": "MoscowConsumer\\MoscowConsumer.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",

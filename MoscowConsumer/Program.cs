@@ -4,6 +4,24 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
 var factory = new ConnectionFactory() { HostName = "localhost" };
+var route = Guid.NewGuid();
+
+using (var connection = factory.CreateConnection())
+using (var channel = connection.CreateModel())
+{
+    channel.ExchangeDeclare(exchange: "DynamicRouterRules", type: ExchangeType.Direct);
+
+    var message = "Moscow|" + route;
+    var body = Encoding.UTF8.GetBytes(message);
+
+    channel.BasicPublish(
+        exchange: "DynamicRouterRules",
+        routingKey: "",
+        basicProperties: null,
+        body: body);
+
+    Console.WriteLine($"Rule {message} sent to 'DynamicRouterRules'");
+}
 
 using (var connection = factory.CreateConnection())
 using (var channel = connection.CreateModel())
@@ -12,7 +30,7 @@ using (var channel = connection.CreateModel())
 
     var queueName = channel.QueueDeclare(queue: "moscow_queue", durable: false, exclusive: false, autoDelete: false, arguments: null).QueueName;
 
-    channel.QueueBind(queue: queueName, exchange: "direct_bagage_exchange", routingKey: "moscow");
+    channel.QueueBind(queue: queueName, exchange: "direct_bagage_exchange", routingKey: route.ToString());
 
     Console.WriteLine(" [*] Waiting for bagage to Moscow...");
 
