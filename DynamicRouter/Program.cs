@@ -9,72 +9,64 @@ var RuleDictionary = new Dictionary<string, string>();
 
 var factory = new ConnectionFactory() { HostName = "localhost" };
 
-Task.WaitAll(
-    Task.Run(() => ListenToDynamicRouterRules(factory)),
-    Task.Run(() => ListenToDynamicRouter(factory))
-);
-
-Console.WriteLine(" Press [enter] to exit.");
-Console.ReadLine();
-
-
-void ListenToDynamicRouterRules(ConnectionFactory factory)
+using (var connection = factory.CreateConnection())
+using (var channel = connection.CreateModel())
 {
-    using (var connection = factory.CreateConnection())
-    using (var channel = connection.CreateModel())
-    {
-        channel.ExchangeDeclare(exchange: "DynamicRouterRules", type: ExchangeType.Direct);
 
-        var queueName = channel.QueueDeclare(queue: "DynamicRouterRules", durable: false, exclusive: false, autoDelete: false, arguments: null).QueueName;
-        channel.QueueBind(queue: queueName, exchange: "DynamicRouterRules", routingKey: "");
+    ListenToDynamicRouterRules(channel);
+    ListenToDynamicRouter(channel);
 
-        Console.WriteLine(" [*] Waiting for rule to DynamicRouterRules...");
-
-        var consumer = new EventingBasicConsumer(channel);
-        consumer.Received += (model, ea) =>
-        {
-            var body = ea.Body.ToArray();
-            var message = Encoding.UTF8.GetString(body);
-            Console.WriteLine($" rule received: {message}");
-
-            var rule = message.Split('|');
-            RuleDictionary.Add(rule[0], rule[1]);
-        };
-
-        channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
-        Console.ReadLine();
-    }
+    Console.WriteLine(" Press [enter] to exit.");
+    Console.ReadLine();
 }
 
-void ListenToDynamicRouter(ConnectionFactory factory)
+void ListenToDynamicRouterRules(IModel channel)
 {
-    using (var connection = factory.CreateConnection())
-    using (var channel = connection.CreateModel())
+    channel.ExchangeDeclare(exchange: "DynamicRouterRules", type: ExchangeType.Direct);
+
+    var queueName = channel.QueueDeclare(queue: "DynamicRouterRules", durable: false, exclusive: false, autoDelete: false, arguments: null).QueueName;
+    channel.QueueBind(queue: queueName, exchange: "DynamicRouterRules", routingKey: "");
+
+    Console.WriteLine(" [*] Waiting for rule to DynamicRouterRules...");
+
+    var consumer = new EventingBasicConsumer(channel);
+    consumer.Received += (model, ea) =>
     {
-        channel.ExchangeDeclare(exchange: "DynamicRouter", type: ExchangeType.Direct);
+        var body = ea.Body.ToArray();
+        var message = Encoding.UTF8.GetString(body);
+        Console.WriteLine($" rule received: {message}");
 
-        var queueName = channel.QueueDeclare(queue: "DynamicRouter", durable: false, exclusive: false, autoDelete: false, arguments: null).QueueName;
-        channel.QueueBind(queue: queueName, exchange: "DynamicRouter", routingKey: "");
+        var rule = message.Split('|');
+        RuleDictionary[rule[0]] = rule[1];
+    };
 
-        Console.WriteLine(" [*] Waiting for bagage to DynamicRouter...");
-
-        var consumer = new EventingBasicConsumer(channel);
-        consumer.Received += (model, ea) =>
-        {
-            var body = ea.Body.ToArray();
-            var message = Encoding.UTF8.GetString(body);
-            Console.WriteLine($" Bagage received: {message}");
-
-            var properties = message.Split('|');
-            SendMessage(properties);
-        };
-
-        channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
-
-        Console.ReadLine();
-    }
+    channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
 }
 
+void ListenToDynamicRouter(IModel channel)
+{
+
+    channel.ExchangeDeclare(exchange: "DynamicRouter", type: ExchangeType.Direct);
+
+    var queueName = channel.QueueDeclare(queue: "DynamicRouter", durable: false, exclusive: false, autoDelete: false, arguments: null).QueueName;
+    channel.QueueBind(queue: queueName, exchange: "DynamicRouter", routingKey: "");
+
+    Console.WriteLine(" [*] Waiting for bagage to DynamicRouter...");
+
+    var consumer = new EventingBasicConsumer(channel);
+    consumer.Received += (model, ea) =>
+    {
+        var body = ea.Body.ToArray();
+        var message = Encoding.UTF8.GetString(body);
+        Console.WriteLine($" Bagage received: {message}");
+
+        var properties = message.Split('|');
+        SendMessage(properties);
+    };
+
+    channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
+
+}
 
 void SendMessage(string[] properties)
 {
